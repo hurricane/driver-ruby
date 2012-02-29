@@ -1,4 +1,4 @@
 source :rubygems
 
 gem 'minitest'
-gem 'rack'
+gem 'rake'
