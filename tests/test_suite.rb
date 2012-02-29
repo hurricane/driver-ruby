@@ -1,9 +1,8 @@
 $: << File.expand_path(File.dirname(__FILE__))
 
-require 'test/unit'
-require 'test/unit/ui/console/testrunner'
+require 'rubygems'
+require 'minitest/unit'
 require 'decode_test'
 require 'encode_test'
 
-Test::Unit::UI::Console::TestRunner.run(EncodeTest)
-Test::Unit::UI::Console::TestRunner.run(DecodeTest)
+MiniTest::Unit.autorun()

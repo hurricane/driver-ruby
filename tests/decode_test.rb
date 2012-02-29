@@ -1,10 +1,10 @@
 $: << File.expand_path(File.join(File.dirname(__FILE__), '..', 'lib'))
 
-require 'test/unit'
+require 'minitest/unit'
 require 'erl_codec'
 
 # Runs all decode tests.
-class DecodeTest < Test::Unit::TestCase
+class DecodeTest < MiniTest::Unit::TestCase
 
   # Test that decoding an atom cache reference works.
   def test_decode_atom_cache_ref()

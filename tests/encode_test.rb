@@ -1,10 +1,10 @@
 $: << File.expand_path(File.join(File.dirname(__FILE__), '..', 'lib'))
 
-require 'test/unit'
+require 'minitest/unit'
 require 'erl_codec'
 
 # Runs all encode tests.
-class EncodeTest < Test::Unit::TestCase
+class EncodeTest < MiniTest::Unit::TestCase
 
   # Test that encoding a float to IEEE format works
   def test_encode_float()
