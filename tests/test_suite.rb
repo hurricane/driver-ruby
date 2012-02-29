@@ -1,3 +1,5 @@
+$: << File.expand_path(File.dirname(__FILE__))
+
 require 'test/unit'
 require 'test/unit/ui/console/testrunner'
 require 'decode_test'
