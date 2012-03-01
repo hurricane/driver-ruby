@@ -49,7 +49,16 @@ module Rack
           end
           rackenv.default = nil
 
-          code, headers, data = app.call(rackenv)
+          begin
+            code, headers, data = app.call(rackenv)
+          rescue
+            code = '500 Internal Server Error'
+            headers = {'Content-Type' => 'text/html'}
+            data = ['<h1>500 &mdash; Internal Server Error</h1>']
+            puts $!.inspect()
+            puts $!.backtrace()
+          end
+
           body = StringIO.new()
           data.each do |chunk|
             body << chunk
