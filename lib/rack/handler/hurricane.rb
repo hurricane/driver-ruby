@@ -102,7 +102,9 @@ module Rack
         data.each do |req_tuple|
           key = req_tuple.data[0]
           value = req_tuple.data[1]
-          if key.name.eql?('listen_port')
+          if key.name.eql?('peer')
+            rack_hash['REMOTE_ADDR'] = value.to_s()
+          elsif key.name.eql?('listen_port')
             rack_hash['SERVER_PORT'] = value.to_s()
           elsif key.name.eql?('server_name')
             rack_hash['SERVER_NAME'] = value
