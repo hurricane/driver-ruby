@@ -120,6 +120,10 @@ module Rack
             rack_hash['PATH_INFO'] = uri.path()
             rack_hash['QUERY_STRING'] = uri.query() || ''
           elsif key.name.eql?('headers')
+            if value.nil?()
+              next
+            end
+
             value.each do |header|
               header_key = header.data[0]
               header_value = header.data[1]
